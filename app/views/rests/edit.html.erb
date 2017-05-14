@@ -1,0 +1,10 @@
+<h1>Edit Nap Type</h1>
+<%= form_tag "/rests/#{@rest.id}", method: :patch do %>
+<div> Type of Nap: <input type= "text" name="kind_param">
+<div>Duration: <input type= "text" name="duration_param">
+<div>Location: <input type= "text" name="location_param">
+<input type= "submit" value="Enter New Nap">
+<%end%>
+
+
+<a href="/rests">Back to homepage</a>

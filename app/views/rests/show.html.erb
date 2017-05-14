@@ -1,0 +1,15 @@
+<h1> <%= @rest.kind %></h1>
+<p><%= @rest.duration %></p>
+<p><%= @rest.location %></p>
+
+<h4><a href="/rests/<%= @rest[:id]%>/edit">Want to edit a nap? Click here!</a></h4>
+
+<%= form_tag "/rests/#{@rest.id}", method: :delete do %>
+  <input type="submit" value="DESTROY THIS rest!">
+<%end %>
+
+<%= link_to "DESTROY THIS NAP", "/rests/#{@rest.id}", method: :delete %>
+<%= button_to "DESTROY THIS NAP", "/rests/#{@rest.id}", method: :delete %>
+
+
+<a href="/rests">Back to homepage</a>

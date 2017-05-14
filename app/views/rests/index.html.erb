@@ -1,0 +1,10 @@
+<h1>Here is a list of all of our favorite naps:</h1>
+
+<h4><% @rests.each do |rest| %> <a href="/rests/<%=rest[:id]%>"><%= rest.kind %></a> <%= rest.duration %></h4>
+<p><%= rest.location %></p>
+<p><a href="/rests/<%= rest.id%>/edit">Want to edit a nap? Click here!</a></p>
+<a href="/rests/<%= rest.id %>" data-confirm="Are you sure?" data-method="delete">
+<%= button_to "DESTROY THIS NAP!", "/rests/#{rest.id}", method: :delete %>
+<% end %>
+
+<a href="/rests/new">Create a new nap here</a>
